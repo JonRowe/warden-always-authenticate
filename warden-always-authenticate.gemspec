@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Warden::AlwaysAuthenticate::VERSION
   gem.authors       = ["Jon Rowe"]
   gem.email         = ["hello@jonrowe.co.uk"]
-  gem.description   = %q{Simple gem for forcing warden to redirect.}
-  gem.summary       = %q{Simple gem for forcing warden to redirect.}
+  gem.description   = %q{Simple gem for forcing warden to authenticate.}
+  gem.summary       = %q{Simple gem for forcing warden to authenticate.}
   gem.homepage      = "https://github.com/JonRowe/warden-always-authenticate.git"
 
   gem.files         = `git ls-files`.split($/)

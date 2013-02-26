@@ -2,10 +2,10 @@ require 'warden-always-authenticate'
 
 describe 'forcing authentication via warden' do
 
-  let(:app)    { double 'rack stack', call: result }
+  let(:app)    { double 'rack stack', :call => result }
   let(:env)    { { 'warden' => warden } }
   let(:result) { double 'result' }
-  let(:warden) { double 'warden', authenticate!: true }
+  let(:warden) { double 'warden', :authenticate! => true }
 
   subject { Warden::AlwaysAuthenticate.new(app).call env }
 

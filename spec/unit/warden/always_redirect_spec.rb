@@ -12,25 +12,25 @@ describe 'forcing authentication via warden' do
   context 'when succesful' do
 
     it 'forces warden to authenticate' do
-      warden.should_receive(:authenticate!)
+      expect(warden).to receive(:authenticate!)
       subject
     end
     it 'calls down the stack' do
-      app.should_receive(:call).with(env)
+      expect(app).to receive(:call).with(env)
       subject
     end
     it 'returns the result of the stack call' do
-      subject.should == result
+      expect(subject).to eq(result)
     end
   end
 
   context 'during failure' do
     before do
-      warden.stub(:authenticate!).and_throw(:warden)
+      allow(warden).to receive(:authenticate!).and_throw(:warden)
     end
 
     it 'forces warden to authenticate' do
-      warden.should_receive(:authenticate!)
+      expect(warden).to receive(:authenticate!)
       catch(:warden) { subject }
     end
     it 'lets the throw bubble up to warden' do

@@ -20,10 +20,10 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'warden'
 
   gem.add_development_dependency 'rspec'
-  if RUBY_VERSION.to_f >= 2
-    gem.add_development_dependency "rake", '~> 11.0'
-  else
+  if RUBY_VERSION.to_f < 2
     gem.add_development_dependency "rake", '~> 10.0'
+  else
+    gem.add_development_dependency "rake", '~> 12.3.3'
   end
 
 end
